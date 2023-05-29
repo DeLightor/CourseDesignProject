@@ -1,2 +1,2 @@
 # CourseDesignProject
-This is no just a test
+This is not just a test

@@ -9,10 +9,10 @@
         nav {
             font-size: 1.5rem;
             background-color: #21D4FD;
-            background-image: -webkit-linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
-            background-image: -moz-linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
-            background-image: -o-linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
-            background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+            background-image: -webkit-linear-gradient(19deg, #21D4FD 0%, #21ff6b 100%);
+            /*background-image: -moz-linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);*/
+            /*background-image: -o-linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);*/
+            /*background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);*/
         }
 
         h1 {
@@ -97,7 +97,7 @@
                 <form th:action="@{/admin/reader/stop}" method="post" th:id="'stopForm' + ${readerStat.index}">
                     <input type="hidden" name="readerId" th:value="${reader.getReaderId()}" />
                     <button type="button" class="btn btn-outline-dark" style="margin-top: 1px"
-                            th:onclick="'showConfirmation(\'停借操作\', \'stopForm' + ${readerStat.index} + '\')'">停借
+                            th:onclick="'showConfirmation(\'停借操作\', \'stopForm' + ${readerStat.index} + '\')'"> 重置
                     </button>
                 </form>
             </td>

@@ -12,7 +12,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserService userService;
 
-
     //授权
     @Override
     protected void configure(HttpSecurity http) throws Exception {
