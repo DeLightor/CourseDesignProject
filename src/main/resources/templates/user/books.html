@@ -73,6 +73,7 @@
             <th>ISBN</th>
             <th>价格</th>
             <th></th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
@@ -83,6 +84,8 @@
             <td th:text="${book.getIsbn()}"></td>
             <td th:text="${book.getPrice()}"></td>
             <td><a th:href="@{'/user/book/info/' + ${book.getBookId()}}" class="btn btn-outline-success">详情</a></td>
+            <td><a th:href="@{'/user/book/borrow/' + ${book.getBookId()}}" class="btn btn-outline-success">借阅</a></td>
+            <td><a th:href="@{'/user/book/return/' + ${book.getBookId()}}" class="btn btn-outline-success">归还</a></td>
         </tr>
         </tbody>
     </table>

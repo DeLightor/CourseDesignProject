@@ -36,4 +36,15 @@ public class UserBookController {
         model.addAttribute("books", books);
         return "user/book_search_result";
     }
+
+    @RequestMapping("/borrow/{id}")
+    public String borrow(@PathVariable("id") long id) {
+        bookMapper.borrowBook(id);
+        return "redirect:/user/book/getAll";
+    }
+    @RequestMapping("/return/{id}")
+    public String returnBook(@PathVariable("id") long id) {
+        bookMapper.returnBook(id);
+        return "redirect:/user/book/getAll";
+    }
 }

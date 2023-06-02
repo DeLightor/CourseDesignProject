@@ -7,6 +7,7 @@ import com.lyx.bookmanager.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -38,6 +39,21 @@ public class AdminReaderController {
         System.out.println("Reader ID: " + readerId);
         // 在这里可以使用 readerId 进行停借操作
         readerMapper.updateStop(readerId);
+        return "redirect:/admin/reader/getAll";
+    }
+
+    @RequestMapping("/add")
+    public String add(Reader reader) {
+        readerMapper.addReader(reader);
+        return "redirect:/admin/reader/getAll";
+    }
+    @RequestMapping("/toAddPage")
+    public String toAddPage() {
+        return "admin/readers_add";
+    }
+    @RequestMapping("/delete/{readerId}")
+    public String delete(@PathVariable("readerId") String readerId) {
+        readerMapper.deleteUser(readerId);
         return "redirect:/admin/reader/getAll";
     }
 }

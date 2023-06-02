@@ -31,4 +31,12 @@
         SET borrow = 1
         WHERE reader_id = #{readerId}
     </update>
+    <insert id="addReader" parameterType="Reader">
+        insert into reader_info values ( #{readerId}, #{name}, #{sex}, #{birth}, #{address},
+                                      #{telcode},#{borrow})
+    </insert>
+
+    <delete id="deleteUser">
+        delete from reader_info where reader_id = #{readerId}
+    </delete>
 </mapper>

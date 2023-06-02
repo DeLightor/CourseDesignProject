@@ -34,4 +34,14 @@
         publish like '%${keyword}%' or
         author like '%${keyword}%'
     </select>
+    <update id="borrowBook" parameterType="Book">
+        update book_info
+        set state = 0
+        where book_id = #{id}
+    </update>
+    <update id="returnBook" parameterType="Book">
+        update book_info
+        set state = 1
+        where book_id = #{id}
+    </update>
 </mapper>

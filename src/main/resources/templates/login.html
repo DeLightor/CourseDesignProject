@@ -23,14 +23,26 @@
             background-image: -o-linear-gradient(62deg, #8EC5FC 0%, #71ceea 100%);
             background-image: linear-gradient(62deg, #8EC5FC 0%, #6db5ee 100%);
         }
+
         .box1 {
             width: 60%;
             margin-top: 60px;
+            opacity: 0.75; /* 设置透明度为 0.75 */
         }
         .box2 {
             margin: 120px auto;
         }
     </style>
+    <style>
+        body {
+            background-image: url(/img/7.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: rgba(0, 0, 0, 0.3); /* 将背景颜色设置为半透明黑色 */
+            /* 其他背景样式 */
+        }
+    </style>
+
 </head>
 <body>
 <div class="box1">
@@ -62,22 +74,25 @@
     </div>
 </div>
 
-<div class="box2">
+
+<div class="box2" style="border: 2px solid #ffe8a1; padding: 20px; border-radius: 10px;">
     <h1 style="margin-bottom: 40px">欢迎使用图书管理系统</h1>
     <div>
         <form th:action="@{/login}" method="post">
             <div class="form-group">
-                <label for="username" class="">用户名:</label>
-                <input type="text" class="form-control" id="username" name="username">
+                <label for="username" style="color: #fff;">用户名:</label>
+                <input type="text" class="form-control" id="username" name="username" style="background-color: rgba(255, 255, 255, 0.5);">
             </div>
             <div class="form-group">
-                <label for="password" class="">密码:</label>
-                <input type="password" class="form-control" id="password" name="password">
+                <label for="password" style="color: #fff;">密码:</label>
+                <input type="password" class="form-control" id="password" name="password" style="background-color: rgba(255, 255, 255, 0.5);">
             </div>
             <input type="submit" class="btn btn-primary btn-lg" value="登&nbsp;&nbsp;&nbsp;&nbsp;录" style="margin-top: 20px">
         </form>
     </div>
 </div>
+
+
 
 <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>

@@ -12,9 +12,6 @@
             font-size: 1.5rem;
             background-color: #21D4FD;
             background-image: -webkit-linear-gradient(19deg, #21D4FD 0%, #21ff6b 100%);
-            /*background-image: -moz-linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);*/
-            /*background-image: -o-linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);*/
-            /*background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);*/
         }
         h1 {
             font-size: 2rem;
@@ -84,6 +81,8 @@
             <td th:text="${book.getIsbn()}"></td>
             <td th:text="${book.getPrice()}"></td>
             <td><a th:href="@{'/user/book/info/' + ${book.getBookId()}}" class="btn btn-outline-success">详情</a></td>
+            <td><a th:href="@{'/user/book/borrow/' + ${book.getBookId()}}" class="btn btn-outline-success">借阅</a></td>
+            <td><a th:href="@{'/user/book/return/' + ${book.getBookId()}}" class="btn btn-outline-success">归还</a></td>
         </tr>
         </tbody>
     </table>

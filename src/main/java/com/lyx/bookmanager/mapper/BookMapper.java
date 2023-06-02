@@ -15,4 +15,6 @@ public interface BookMapper {
     void deleteBook(long id);
     void addBook(Book book);
     List<Book> searchBook(String keyword);
+    void borrowBook(long id);
+    void returnBook(long id);
 }

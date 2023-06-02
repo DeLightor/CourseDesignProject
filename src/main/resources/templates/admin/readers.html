@@ -77,6 +77,7 @@
         </tr>
         </thead>
         <tbody>
+        <a th:href="@{/admin/reader/toAddPage}" class="btn btn-outline-primary btn-lg">添&nbsp;&nbsp;&nbsp;&nbsp;加</a>
         <tr th:each="reader, readerStat: ${readers}" th:object="${reader}">
             <td th:text="${reader.getReaderId()}"></td>
             <td th:text="${reader.getName()}"></td>
@@ -89,7 +90,7 @@
                 <form th:action="@{/admin/reader/borrow}" method="post" th:id="'lossForm' + ${readerStat.index}">
                     <input type="hidden" name="readerId" th:value="${reader.getReaderId()}" />
                     <button type="button" class="btn btn-outline-danger" style="margin-top: 1px"
-                            th:onclick="'showConfirmation(\'挂失操作\', \'lossForm' + ${readerStat.index} + '\')'">挂失
+                            th:onclick="'showConfirmation(\'挂失操作\', \'lossForm' + ${readerStat.index} + '\')'">停借
                     </button>
                 </form>
             </td>
@@ -101,9 +102,8 @@
                     </button>
                 </form>
             </td>
+            <td><a th:href="@{'/admin/reader/delete/' + ${reader.getReaderId()}}" class="btn btn-outline-danger">删除</a></td>
         </tr>
-
-
         </tbody>
     </table>
 </div>

@@ -15,4 +15,6 @@ public interface ReaderMapper {
     void updateInfo(Reader reader);
     void updateBorrow(String readerId);
     void updateStop(String readerId);
+    void addReader(Reader reader);
+    void deleteUser(String readerId);
 }
