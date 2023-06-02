@@ -30,11 +30,9 @@ public class SessionFilter implements Filter {
             if (!username.equals("admin")) {
                 name = readerMapper.getReaderName(username);
             }
-
             session.setAttribute("name", name);
             session.setAttribute("username", username);
         }
-
         filterChain.doFilter(servletRequest, servletResponse);
     }
 }
